@@ -25,15 +25,11 @@ function App() {
                 <div class="row">
                   <div class="one-half column">
                   <Titulos type="h2" text="Crear mi cita"></Titulos>
-                    <form><Form type="label" text="Nombre Mascota"></Form><input type="text" name="mascota" class="u-full-width" placeholder="Nombre Mascota"
-                      value=""></input>
-                      <label>Nombre Dueño</label><input type="text" name="propietario" class="u-full-width"
-                        placeholder="Nombre dueño de la mascota" value=""></input>
-                      <label>Fecha</label><input type="date" name="fecha"
-                        class="u-full-width" value=""></input>
-                      <label>hora</label><input type="time" name="hora" class="u-full-width"
-                        value=""></input>
-                      <label>Sintomas</label><textarea name="sintomas" class="u-full-width"></textarea><button type="submit"
+                    <form><Form type="label" text="Nombre Mascota" placeholder='' tipo=''></Form><Form type="input" text="" placeholder='Nombre Mascota' tipo='text' name='Mascota'></Form>
+                    <Form type="label" text="Nombre Dueño" placeholder='' tipo=''></Form><Form type="input" text="" placeholder='Nombre Dueño' tipo='text' name='Dueño'></Form>
+                    <Form type="label" text="Fecha" placeholder='' tipo=''></Form><Form type="input" text="" placeholder='' tipo='date' name='Fecha'></Form>  
+                    <Form type="label" text="Hora" placeholder='' tipo='' name=''></Form><Form type="input" text="" placeholder='' tipo='time' name='Hora'></Form>
+                    <Form type="label" text="Sintomas" placeholder='' tipo='' name=''></Form><Form type="textarea" text="" placeholder='Sintomas' tipo='textarea' name='sintomas'></Form><label>Sintomas</label><textarea name="sintomas" class="u-full-width"></textarea><button type="submit"
                         class="u-full-width button-primary">Agregar Cita</button>
                     </form>
                   </div>
