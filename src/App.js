@@ -4,8 +4,31 @@ import Form from './Form.js';
 import Boton from './Boton.js';
 import TextArea from './TextArea.js';
 import Card from './Card.js';
+import { useState } from 'react';
 
 function App() {
+  const [nombreDueño, setNombreDueño] = useState('');
+  const [nombreMascota, setNombreMascota] = useState('');
+  const [fecha, setFecha] = useState('');
+  const [hora, setHora] = useState('');
+  const [sintomas, setSintomas] = useState('');
+  const [citas, setCitas] = useState([]);
+  const agregarCita = evento => {
+    evento.preventDefault();
+    setCitas(
+      [
+        ...citas,
+        evento.target.nombreDueño.value,
+        evento.target.nombreMascota.value,
+        evento.target.fecha.value,
+        evento.target.hora.value,
+        evento.target.sintomas.value,
+      ]
+    );
+    
+    evento.target.nombre.value = '';
+  }
+
   return (
     <html lang="en">
       <head>
@@ -31,48 +54,25 @@ function App() {
                   <Titulos type="h2" text="Crear mi cita"></Titulos>
                     <form>
                       <Form type="label" text="Nombre Mascota" placeholder='' tipo='' name=''></Form>
-                      <Form type="input" text="" placeholder='Nombre Mascota' tipo='text' name='Mascota'></Form>
+                      <Form onKeyUp={(e) => setNombreMascota(e.target.value)} type="input" text="" placeholder='Nombre Mascota' tipo='text' name='Mascota'></Form>
                       
                       <Form type="label" text="Nombre Dueño" placeholder='' tipo=''></Form>
-                      <Form type="input" text="" placeholder='Nombre Dueño' tipo='text' name='Dueño'></Form>
+                      <Form onKeyUp={(e) => setNombreDueño(e.target.value)} type="input" text="" placeholder='Nombre Dueño' tipo='text' name='Dueño'></Form>
                       
                       <Form type="label" text="Fecha" placeholder='' tipo=''></Form>
-                      <Form type="input" text="" placeholder='' tipo='date' name='Fecha'></Form>  
+                      <Form onKeyUp={(e) => setFecha(e.target.value)} type="input" text="" placeholder='' tipo='date' name='Fecha'></Form>  
                       
                       <Form type="label" text="Hora" placeholder='' tipo='' name=''></Form>
-                      <Form type="input" text="" placeholder='' tipo='time' name='Hora'></Form>
+                      <Form onKeyUp={(e) => setHora(e.target.value)} type="input" text="" placeholder='' tipo='time' name='Hora'></Form>
                       
-                      <Form type="label" text="Sintomas" placeholder='' tipo='' name=''></Form>
+                      <Form onKeyUp={(e) => setSintomas(e.target.value)} type="label" text="Sintomas" placeholder='' tipo='' name=''></Form>
                       <TextArea clase="u-full-width" placeholder='Sintomas' name='sintomas'></TextArea>
                       <Boton type="submit" clase='u-full-width button-primary' text='Agregar Cita'></Boton>
                     </form>
                   </div>
                   <div class="one-half column">
                   <Titulos type="h2" text="Administra tus citas"></Titulos>
-                    <div class="cita">
-                      <Card text1='Mascota:' text2='Nina'></Card>
-                      <Card text1='Dueño:' text2='Martin'></Card>
-                      <Card text1='Fecha:' text2='2021-08-05'></Card>
-                      <Card text1='Hora:' text2='08:20'></Card>
-                      <Card text1='Sintomas:' text2='Le duele la pierna'></Card>
-                      <Boton clase='button elimnar u-full-width' text='Eliminar'>Eliminar ×</Boton>
-                    </div>
-                    <div class="cita">
-                    <Card text1='Mascota:' text2='Sifon'></Card>
-                      <Card text1='Dueño:' text2='Flecha'></Card>
-                      <Card text1='Fecha:' text2='2023-08-05'></Card>
-                      <Card text1='Hora:' text2='09:24'></Card>
-                      <Card text1='Sintomas:' text2='Duerme mucho'></Card>
-                      <Boton clase='button elimnar u-full-width' text='Eliminar'>Eliminar ×</Boton>
-                    </div>
-                    <div class="cita">
-                      <Card text1='Mascota:' text2='Floki'></Card>
-                      <Card text1='Dueño:' text2='Ari'></Card>
-                      <Card text1='Fecha:' text2='2023-08-05'></Card>
-                      <Card text1='Hora:' text2='16:15'></Card>
-                      <Card text1='Sintomas:' text2='No está comiendo'></Card>
-                      <Boton clase='button elimnar u-full-width' text='Eliminar'>Eliminar ×</Boton>
-                    </div>
+                      <Card  nombreMascota='Nina' nombreDueño='Martin' fecha='2021-08-05' hora='08:20' sintomas='Le duele la pierna' clase='button elimnar u-full-width' textoBoton='Eliminar'></Card>
                   </div>
                 </div>
               </div>
