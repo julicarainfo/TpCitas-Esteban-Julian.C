@@ -1,14 +1,12 @@
 import './Card.css';
 import React from 'react';
-function Form({ type = "", text = "", placeholder ="", tipo="",name=""}) {
+function Card({text1 = "", text2=""}) {
  return (
     <>
-     <div>{
-      type === "label" ? <label>{text}</label> : <input type={tipo} name={name} class="u-full-width" placeholder={placeholder}
-      value=""></input>
+    {
+       <p>{text1} <span type="span">{text2}</span></p>
     }
-    </div>
     </>
 )
 }
-export default Form;
+export default Card;

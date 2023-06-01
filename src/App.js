@@ -3,6 +3,7 @@ import Titulos from './Titulos.js';
 import Form from './Form.js';
 import Boton from './Boton.js';
 import TextArea from './TextArea.js';
+import Card from './Card.js';
 
 function App() {
   return (
@@ -49,25 +50,28 @@ function App() {
                   <div class="one-half column">
                   <Titulos type="h2" text="Administra tus citas"></Titulos>
                     <div class="cita">
-                      <p>Mascota: <span>Nina</span></p>
-                      <p>Dueño: <span>Martin</span></p>
-                      <p>Fecha: <span>2021-08-05</span></p>
-                      <p>Hora: <span>08:20</span></p>
-                      <p>Sintomas: <span>Le duele la pierna</span></p><Boton clase='button elimnar u-full-width' text='Eliminar'> ×</Boton>
+                      <Card text1='Mascota:' text2='Nina'></Card>
+                      <Card text1='Dueño:' text2='Martin'></Card>
+                      <Card text1='Fecha:' text2='2021-08-05'></Card>
+                      <Card text1='Hora:' text2='08:20'></Card>
+                      <Card text1='Sintomas:' text2='Le duele la pierna'></Card>
+                      <Boton clase='button elimnar u-full-width' text='Eliminar'>Eliminar ×</Boton>
                     </div>
                     <div class="cita">
-                      <p>Mascota: <span>Sifon</span></p>
-                      <p>Dueño: <span>Flecha</span></p>
-                      <p>Fecha: <span>2023-08-05</span></p>
-                      <p>Hora: <span>09:24</span></p>
-                      <p>Sintomas: <span>Duerme mucho</span></p><Boton clase='button elimnar u-full-width' text='Eliminar'>Eliminar ×</Boton>
+                    <Card text1='Mascota:' text2='Sifon'></Card>
+                      <Card text1='Dueño:' text2='Flecha'></Card>
+                      <Card text1='Fecha:' text2='2023-08-05'></Card>
+                      <Card text1='Hora:' text2='09:24'></Card>
+                      <Card text1='Sintomas:' text2='Duerme mucho'></Card>
+                      <Boton clase='button elimnar u-full-width' text='Eliminar'>Eliminar ×</Boton>
                     </div>
                     <div class="cita">
-                      <p>Mascota: <span>Floki</span></p>
-                      <p>Dueño: <span>Ari</span></p>
-                      <p>Fecha: <span>2023-08-05</span></p>
-                      <p>Hora: <span>16:15</span></p>
-                      <p>Sintomas: <span>No está comiendo</span></p><Boton clase='button elimnar u-full-width' text='Eliminar'>Eliminar ×</Boton>
+                      <Card text1='Mascota:' text2='Floki'></Card>
+                      <Card text1='Dueño:' text2='Ari'></Card>
+                      <Card text1='Fecha:' text2='2023-08-05'></Card>
+                      <Card text1='Hora:' text2='16:15'></Card>
+                      <Card text1='Sintomas:' text2='No está comiendo'></Card>
+                      <Boton clase='button elimnar u-full-width' text='Eliminar'>Eliminar ×</Boton>
                     </div>
                   </div>
                 </div>
