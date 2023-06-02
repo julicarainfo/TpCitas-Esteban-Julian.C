@@ -11,7 +11,6 @@ function Card({nombreMascota="", nombreDueño="",fecha="",hora="",sintomas="", c
             <p>Fecha: <span>{fecha}</span></p>
             <p>Hora: <span>{hora}</span></p>
             <p>Sintomas: <span>{sintomas}</span></p>
-            <button class={clase}>{textoBoton}</button>
          </div>
     //<p>{text1} <span type="span">{text2}</span></p>
     }
